@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+*::after,
+*::before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html,
+body,
+div,
+form,
+p,
+ul,
+li,
+span,
+label,
+img,
+input {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    position: relative;
+    font-family: PingFang SC, Hiragino Sans GB, Arial, Microsoft YaHei, Verdana, Roboto, Noto, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ul,
+li {
+    list-style: none;
+}
+
+input,
+textarea,
+button {
+    outline: none;
+}
+button[disabled] {
+    opacity: 0.5;
+}
+a {
+    color: #00bcf0;
+}
+a,
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.tl-f {
+    table-layout: fixed;
+}
+
+/* 文字相关 */
+.ta-l {
+    text-align: left;
+}
+.ta-c {
+    text-align: center;
+}
+.ta-r {
+    text-align: right;
+}
+.fw-n {
+    font-weight: normal;
+}
+.td-n {
+    text-decoration: none;
+}
+.ws-nw {
+    white-space: nowrap;
+}
+
+/* 垂直对齐方式 */
+.va-t {
+    vertical-align: top;
+}
+.va-m {
+    vertical-align: middle;
+}
+.va-b {
+    vertical-align: bottom;
+}
+.va-tt {
+    vertical-align: text-top;
+}
+.va-tb {
+    vertical-align: text-bottom;
+}
+
+/* 显示方式 */
+.dn {
+    display: none;
+}
+.db {
+    display: block;
+}
+.di {
+    display: inline;
+}
+.d-ib {
+    display: inline-block;
+}
+.df {
+    display: flex;
+}
+.df-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 定位方式 */
+.pr {
+    position: relative;
+}
+.pa {
+    position: absolute;
+}
+.pf {
+    position: fixed;
+}
+.zi-1 {
+    z-index: 1;
+}
+
+/* 浮动方式 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fn {
+    float: none;
+}
+.clear {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+}
+.clearfix:after {
+    clear: both;
+    content: '.';
+    display: block;
+    visibility: hidden;
+    height: 0;
+}
+
+/* 列表排列方式 */
+.list-fl > li {
+    float: left;
+}
+.list-fl:after {
+    content: '.';
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+.list-di > li {
+    display: inline;
+}
+
+/* 列表1像素细线 */
+.list-bb > li,
+.list-tb > li {
+    position: relative;
+}
+.list-bb > li:after,
+.list-tb > li:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 200%;
+    height: 200%;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+.list-tb > li:before {
+    bottom: auto;
+    top: 0;
+}
+.list-b-c-ddd > li:after,
+.list-b-c > li:before {
+    border-color: #ddd;
+}
+
+/* 鼠标显示方式 */
+.cp {
+    cursor: pointer;
+}
+.cd {
+    cursor: default;
+}
+
+/* 溢出控制方式 */
+.oh {
+    overflow: hidden;
+}
+.ox-a {
+    overflow: hidden;
+    overflow-x: auto;
+}
+.oy-a {
+    overflow: hidden;
+    overflow-y: auto;
+}
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 不透明度方式 */
+.translucent {
+    opacity: 0.5;
+}
+.transparent {
+    opacity: 0;
+}
+.o_8 {
+    opacity: 0.8;
+}
+
+/* 圆角0.5细线显示方式 */
+.b-b_5,
+.b-t_5,
+.b-l_5,
+.b-r_5,
+.b_5 {
+    position: relative;
+}
+.b-b_5:before,
+.b-t_5:before,
+.b-l_5:before,
+.b-r_5:before,
+.b_5:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.b-b_5:before,
+.b-t_5:before {
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.3);
+}
+.b-b_5:before {
+    top: auto;
+    bottom: 0;
+}
+.b-l_5:before,
+.b-r_5:before {
+    width: 1px;
+    height: 100%;
+    background-color: #999;
+    -webkit-transform: scaleX(0.3);
+    transform: scaleX(0.3);
+}
+.b-r_5:before {
+    left: auto;
+    right: 0;
+}
+.b_5:before {
+    width: 200%;
+    height: 200%;
+    border: 1px solid #aaa;
+    border-radius: inherit;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    pointer-events: none;
+}
+.b-c-ccc:before {
+    border-color: #ccc;
+    background-color: #ccc;
+}
+.b_5.b-c-ccc:before {
+    background-color: transparent;
+}
+.br_5 {
+    border-radius: 0.2rem;
+}
+.br_5:before {
+    border-radius: 0.4rem;
+}
+
+/* 投影 */
+.bs-b {
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
